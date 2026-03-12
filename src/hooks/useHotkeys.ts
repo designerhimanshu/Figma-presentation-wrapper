@@ -6,6 +6,10 @@ interface HotkeyHandlers {
   onToggleMusic: () => void;
   onClearCanvas: () => void;
   onToggleLaser: (active: boolean) => void;
+  onEscape?: () => void;
+  onRestart?: () => void;
+  onSelectShape?: (shape: 'arrow' | 'rectangle' | 'circle' | 'erase') => void;
+  onToggleTimer?: () => void;
 }
 
 export const useHotkeys = (handlers: HotkeyHandlers) => {
@@ -16,10 +20,15 @@ export const useHotkeys = (handlers: HotkeyHandlers) => {
       }
 
       const key = e.key.toLowerCase();
-      if (key === 'f') handlers.onFillScreen();
-      if (key === 'a') handlers.onActualSize();
       if (key === 'm') handlers.onToggleMusic();
-      if (key === 'c') handlers.onClearCanvas();
+      if (key === 'r' && handlers.onRestart) handlers.onRestart();
+      if (key === 'escape' && handlers.onEscape) handlers.onEscape();
+      if (key === 't' && handlers.onToggleTimer) handlers.onToggleTimer();
+      
+      if (key === 'a' && handlers.onSelectShape) handlers.onSelectShape('arrow');
+      if (key === 's' && handlers.onSelectShape) handlers.onSelectShape('rectangle');
+      if (key === 'c' && handlers.onSelectShape) handlers.onSelectShape('circle');
+      if (key === 'e' && handlers.onClearCanvas) handlers.onClearCanvas();
       
       if (e.key === 'Shift' || e.key === 'Meta') {
         handlers.onToggleLaser(true);
