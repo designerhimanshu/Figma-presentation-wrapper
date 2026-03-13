@@ -26,7 +26,7 @@ export const FigmaIframe: React.FC<FigmaIframeProps> = ({ figmaUrl, viewMode, ac
           <div className="flex justify-between items-end w-full">
             {/* Left aligned main text */}
             <div className="max-w-4xl">
-              <h1 className="text-6xl md:text-8xl font-light text-white mb-2 leading-[1.05] tracking-tight">
+              <h1 className="text-6xl md:text-8xl font-light text-white mb-2 leading-[0.6] tracking-tight">
                 Drive your demo<br />your way!
               </h1>
               <p className="text-sm md:text-base text-zinc-300 font-light max-w-2xl opacity-90">
