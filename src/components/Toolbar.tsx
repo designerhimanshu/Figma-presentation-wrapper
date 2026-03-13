@@ -251,9 +251,9 @@ export const Toolbar: React.FC<ToolbarProps> = ({
                 <div className="flex flex-col gap-1.5">
                   {[
                     { label: 'No music', url: '' },
-                    { label: 'celestial', url: '/celestial.mp3' },
-                    { label: 'mountain', url: '/mountain.mp3' },
-                    { label: 'echoes', url: '/echoes.mp3' },
+                    { label: 'celestial', url: './celestial.mp3' },
+                    { label: 'mountain', url: './mountain.mp3' },
+                    { label: 'echoes', url: './echoes.mp3' },
                   ].map((track) => (
                     <button
                       key={track.label}
