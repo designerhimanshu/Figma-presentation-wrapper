@@ -27,7 +27,7 @@ export const FigmaIframe: React.FC<FigmaIframeProps> = ({ figmaUrl, viewMode, ac
             {/* Left aligned main text */}
             <div className="max-w-4xl">
               <h1 className="text-6xl md:text-8xl font-light text-white mb-2 leading-[1.05] tracking-tight">
-                Time to show off 💅
+                Drive your demo<br />your way!
               </h1>
               <p className="text-sm md:text-base text-zinc-300 font-light max-w-2xl opacity-90">
                 Paste your Figma prototype link in the toolbar below to begin.
