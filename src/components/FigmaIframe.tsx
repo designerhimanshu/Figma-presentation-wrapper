@@ -9,20 +9,36 @@ interface FigmaIframeProps {
 export const FigmaIframe: React.FC<FigmaIframeProps> = ({ figmaUrl, viewMode, activeArtboardId }) => {
   if (!figmaUrl) {
     return (
-      <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#0a0518] via-[#111116] to-[#1a0b1f] text-zinc-400 relative overflow-hidden">
-        {/* Subtle decorative glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-fuchsia-600/10 blur-[100px] rounded-full pointer-events-none" />
+      <div className="w-full h-full flex flex-col bg-zinc-950 relative overflow-hidden">
+        {/* Northern Lights / Aurora Base Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-[#021f31] via-[#09475e] to-[#12121e] opacity-90 blur-xl mix-blend-screen" />
         
-        <div className="relative z-10 flex flex-col items-center text-center max-w-2xl px-8">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-fuchsia-200 to-rose-300 mb-6 tracking-tight drop-shadow-sm">
-            Ready to present like a pro?
-          </h1>
-          <p className="text-xl md:text-2xl text-zinc-300 font-medium mb-4">
-            No prototype loaded yet.
-          </p>
-          <p className="text-lg text-zinc-500">
-            Drop your Figma link into the toolbar below and let's get this show on the road.
-          </p>
+        {/* Abstract Glow Orbs */}
+        <div className="absolute -bottom-[20%] left-[10%] w-[60%] h-[80%] bg-[#088395] rounded-full mix-blend-screen opacity-50 blur-[120px]" />
+        <div className="absolute top-[20%] left-[40%] w-[40%] h-[40%] bg-[#37b7c3] rounded-full mix-blend-screen opacity-30 blur-[100px]" />
+        <div className="absolute -top-[10%] right-[10%] w-[50%] h-[50%] bg-[#0f2c59] rounded-full mix-blend-screen opacity-60 blur-[100px]" />
+        
+        {/* Heavy Vignette */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
+
+        {/* Content Wrapper */}
+        <div className="relative z-10 flex-1 flex flex-col justify-end p-12 md:p-20">
+          <div className="flex justify-between items-end w-full">
+            {/* Left aligned main text */}
+            <div className="max-w-4xl">
+              <h1 className="text-6xl md:text-8xl font-medium text-white mb-6 leading-[1.05] tracking-tight">
+                Where Vision and<br />Presentation Align
+              </h1>
+              <p className="text-xl md:text-2xl text-zinc-300 font-light max-w-2xl opacity-90">
+                Paste your Figma prototype link in the toolbar below to begin.
+              </p>
+            </div>
+            
+            {/* Right aligned watermark text */}
+            <p className="text-sm font-medium text-white/50 tracking-wider uppercase mb-2">
+              Made by Himanshu Agrawal
+            </p>
+          </div>
         </div>
       </div>
     );
