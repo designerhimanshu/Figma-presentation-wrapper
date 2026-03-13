@@ -9,9 +9,21 @@ interface FigmaIframeProps {
 export const FigmaIframe: React.FC<FigmaIframeProps> = ({ figmaUrl, viewMode, activeArtboardId }) => {
   if (!figmaUrl) {
     return (
-      <div className="w-full h-full flex flex-col items-center justify-center bg-[#121212] border-2 border-dashed border-zinc-700 text-zinc-400">
-        <p className="text-xl mb-4 text-white font-medium">No Prototype Loaded</p>
-        <p>Paste a Figma prototype link in the toolbar below to start.</p>
+      <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#0a0518] via-[#111116] to-[#1a0b1f] text-zinc-400 relative overflow-hidden">
+        {/* Subtle decorative glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-fuchsia-600/10 blur-[100px] rounded-full pointer-events-none" />
+        
+        <div className="relative z-10 flex flex-col items-center text-center max-w-2xl px-8">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-fuchsia-200 to-rose-300 mb-6 tracking-tight drop-shadow-sm">
+            Ready to present like a pro?
+          </h1>
+          <p className="text-xl md:text-2xl text-zinc-300 font-medium mb-4">
+            No prototype loaded yet.
+          </p>
+          <p className="text-lg text-zinc-500">
+            Drop your Figma link into the toolbar below and let's get this show on the road.
+          </p>
+        </div>
       </div>
     );
   }
